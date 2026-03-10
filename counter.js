@@ -10,9 +10,9 @@ async function loadCounter() {
 
     const data = await res.json();
     const views = data.info.views;
-    counter.innerHTML = "views: " + views + "<br>";
     const digits = views.toString().padStart(digitsLength,"0").split("");
-
+    counter.innerHTML = "";
+    
     digits.forEach(d => {
       const img = document.createElement("img");
       img.src = d + ".gif";
