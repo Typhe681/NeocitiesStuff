@@ -8,9 +8,7 @@ async function loadCounter() {
       "https://typhe681.github.io/neocities-stuff/views.json?_=" + Date.now()
     );
 
-    const text = await res.text();
-    console.log(JSON.stringify(text));
-    const data = JSON.parse(text.trim());
+    const data = await res.text();
     const views = data.info.views;
     const digits = views.toString().padStart(digitsLength,"0").split("");
     counter.innerHTML = "";
