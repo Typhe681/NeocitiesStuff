@@ -9,6 +9,7 @@ async function loadCounter() {
     );
 
     const text = await res.text();
+    console.log(JSON.stringify(text));
     const data = JSON.parse(text.trim());
     const views = data.info.views;
     const digits = views.toString().padStart(digitsLength,"0").split("");
