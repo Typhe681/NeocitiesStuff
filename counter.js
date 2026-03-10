@@ -5,10 +5,11 @@ async function loadCounter() {
   counter.innerHTML = "loading...";
   try {
     const res = await fetch(
-      "https://typhe681.github.io/neocities-counter/views.json"
+      "https://typhe681.github.io/neocities-counter/views.json?_=" + Date.now()
     );
 
-    const data = await res.json();
+    const text = await res.text();
+    const data = JSON.parse(text.trim());
     const views = data.info.views;
     const digits = views.toString().padStart(digitsLength,"0").split("");
     counter.innerHTML = "";
