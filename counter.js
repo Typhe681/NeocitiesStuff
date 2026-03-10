@@ -5,7 +5,7 @@ async function loadCounter() {
   counter.innerHTML = "loading...";
   try {
     const res = await fetch(
-      "https://typhe.github.io/neocities-counter/views.json"
+      "https://typhe681.github.io/neocities-counter/views.json"
     );
 
     const data = await res.json();
