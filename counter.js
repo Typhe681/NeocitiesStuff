@@ -7,6 +7,7 @@ async function loadCounter() {
     );
     const data = await res.json();
     const views = data.info.views;
+    counter.innerHTML = "views: " + views + "<br>";
 
     const digits = views.toString().padStart(digitsLength,"0").split("");
     const counter = document.getElementById("counter");
@@ -20,7 +21,7 @@ async function loadCounter() {
     });
 
   } catch(e) {
-    console.error("Visitor counter error:", e);
+    counter.innerHTML = "error: " + e;
   }
 }
 
